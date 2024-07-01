@@ -9,7 +9,7 @@ const Index = () => {
     <div className="flex flex-col items-center justify-center space-y-6">
       <Card className="w-full max-w-md">
         <CardHeader>
-          <CardTitle>Welcome to Our App</CardTitle>
+          <CardTitle>Welcome to Activity Tracker</CardTitle>
         </CardHeader>
         <CardContent>
           <p className="text-center">Discover the best way to track your activities and compete with others.</p>

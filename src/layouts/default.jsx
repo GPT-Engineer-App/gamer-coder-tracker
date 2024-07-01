@@ -35,7 +35,7 @@ const Layout = () => {
           </SheetContent>
         </Sheet>
       </header>
-      <main className="flex-grow p-4 overflow-auto">
+      <main className="flex-grow p-4 overflow-auto bg-gray-50">
         <Outlet />
       </main>
     </div>
