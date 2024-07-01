@@ -9,9 +9,16 @@ import {
 } from "@/components/ui/dropdown-menu";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { cn } from "@/lib/utils";
-import { CircleUser, Menu, Package2 } from "lucide-react";
+import { CircleUser, Menu, Package2, Trophy } from "lucide-react";
 import { NavLink, Outlet } from "react-router-dom";
-import { navItems } from "../App";
+const navItems = [
+  {
+    title: "Leaderboard",
+    to: "/leaderboard",
+    icon: <Trophy className="h-4 w-4" />,
+  },
+  // other nav items
+];
 
 const Layout = () => {
   return (
