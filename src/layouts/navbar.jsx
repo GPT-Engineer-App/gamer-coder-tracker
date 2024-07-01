@@ -9,15 +9,18 @@ import {
 } from "@/components/ui/dropdown-menu";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { cn } from "@/lib/utils";
-import { CircleUser, Menu, Package2 } from "lucide-react";
+import { CircleUser, Menu } from "lucide-react";
 import { NavLink, Outlet } from "react-router-dom";
-import { navItems } from "../App";
+import logo from "../../public/images/logo.png";
 
 const Layout = () => {
   return (
     <div className="flex min-h-screen w-full flex-col">
       <header className="sticky top-0 flex h-16 items-center gap-4 border-b bg-background px-4 md:px-6 justify-between">
-        <DesktopNav />
+        <NavLink to="/" className="flex items-center gap-2">
+          <img src={logo} alt="App Logo" className="h-8 w-8" />
+          <span className="text-lg font-semibold">Activity Tracker</span>
+        </NavLink>
         <MobileNav />
         <UserMenu />
       </header>
@@ -30,18 +33,12 @@ const Layout = () => {
 
 const DesktopNav = () => (
   <nav className="hidden md:flex md:items-center md:gap-5 lg:gap-6 text-lg font-medium md:text-sm">
-    <NavItem
-      to="/"
-      className="flex items-center gap-2 text-lg font-semibold md:text-base"
-    >
-      <Package2 className="h-6 w-6" />
-      <span className="sr-only">Acme Inc</span>
+    <NavItem to="/" className="text-lg font-semibold">
+      Home
     </NavItem>
-    {navItems.map((item) => (
-      <NavItem key={item.to} to={item.to}>
-        {item.title}
-      </NavItem>
-    ))}
+    <NavItem to="/leaderboard" className="text-lg font-semibold">
+      Leaderboard
+    </NavItem>
   </nav>
 );
 
@@ -55,18 +52,12 @@ const MobileNav = () => (
     </SheetTrigger>
     <SheetContent side="left">
       <nav className="grid gap-6 text-lg font-medium">
-        <NavItem
-          to="/"
-          className="flex items-center gap-2 text-lg font-semibold"
-        >
-          <Package2 className="h-6 w-6" />
-          <span className="sr-only">Acme Inc</span>
+        <NavItem to="/" className="text-lg font-semibold">
+          Home
         </NavItem>
-        {navItems.map((item) => (
-          <NavItem key={item.to} to={item.to}>
-            {item.title}
-          </NavItem>
-        ))}
+        <NavItem to="/leaderboard" className="text-lg font-semibold">
+          Leaderboard
+        </NavItem>
       </nav>
     </SheetContent>
   </Sheet>
