@@ -9,10 +9,11 @@ const Index = () => {
     <div className="flex flex-col items-center justify-center space-y-6">
       <Card className="w-full max-w-md">
         <CardHeader>
-          <CardTitle>Welcome to Activity Tracker</CardTitle>
+          <CardTitle>ActivityWatch - the world's best free and open-source time-tracking app</CardTitle>
         </CardHeader>
         <CardContent>
           <p className="text-center">Discover the best way to track your activities and compete with others.</p>
+          <p className="text-center mt-4">All data in ActivityWatch is local by default, but you can opt-in to report your data and appear on the public leaderboard.</p>
           <div className="flex justify-center mt-4 space-x-2">
             <Button onClick={() => navigate("/leaderboard")}>View Leaderboard</Button>
             <Button variant="outline" onClick={() => navigate("/about")}>Learn More</Button>
