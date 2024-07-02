@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 
@@ -38,7 +39,11 @@ const Leaderboard = () => {
                 <TableBody>
                   {exampleUsers.map((user) => (
                     <TableRow key={user.name}>
-                      <TableCell>{user.name}</TableCell>
+                      <TableCell>
+                        <Link to={`/user/${user.name}`} className="text-blue-500 hover:underline">
+                          {user.name}
+                        </Link>
+                      </TableCell>
                       <TableCell>{user[category]}</TableCell>
                     </TableRow>
                   ))}

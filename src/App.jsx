@@ -6,6 +6,7 @@ import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
 import Layout from "./layouts/default"; // available: default, navbar, sidebar
 import Index from "./pages/Index.jsx";
 import Leaderboard from "./pages/Leaderboard.jsx";
+import UserProfile from "./pages/UserProfile.jsx";
 const queryClient = new QueryClient();
 
 export const navItems = [
@@ -26,6 +27,7 @@ const App = () => {
             <Route path="/" element={<Layout />}>
               <Route index element={<Index />} />
               <Route path="/leaderboard" element={<Leaderboard />} />
+              <Route path="/user/:username" element={<UserProfile />} />
             </Route>
           </Routes>
         </Router>
